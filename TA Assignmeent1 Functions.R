@@ -5,7 +5,6 @@ clean_text = function(text_df){
   text_df$bd.text  =  iconv(text_df$bd.text, "latin1", "ASCII", sub="") # Keep only ASCII characters
   head(text_df$bd.text,5)
   text_df$bd.text  =  gsub("[^[:alnum:]]", " ", text_df$bd.text)        # keep only alpha numeric 
-  text_df$bd.text = removeNumbers(text_df$bd.text)
   text_df$bd.text  =  tolower(text_df$bd.text)   
   text_df$bd.text  =  stripWhitespace(text_df$bd.text)
   text_df$bd.text = gsub("[^A-Za-z\\s]"," ",text_df$bd.text) 
